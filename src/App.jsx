@@ -10,7 +10,7 @@ const App = () => {
 
   const transitions = useTransition(show, null, {
     from: { position: 'absolute', opacity: 0 },
-    enter: { opacity: 1 },
+    enter: { opacity: 1, width: '100%' },
     leave: { opacity: 0 },
   });
 
@@ -28,6 +28,7 @@ const App = () => {
             item && (
               <animated.div key={key} style={props}>
                 <ComponentThree />
+                {console.log(props)}
               </animated.div>
             )
         )}
