@@ -6,16 +6,8 @@ const c1Style = {
   color: 'white',
 };
 
-const counter = {
-  margin: '1rem auto',
-  width: '100px',
-  backgroundColor: '#333',
-  borderRadius: '50%',
-  textAlign: 'center',
-};
-
 const ComponentOne = () => {
-  const props = useSpring({
+  const springAnimation = useSpring({
     marginTop: 0,
     opacity: 1,
     from: {
@@ -25,7 +17,7 @@ const ComponentOne = () => {
   });
 
   return (
-    <animated.div style={props}>
+    <animated.div style={springAnimation}>
       <div style={c1Style}>
         <h1>ComponentOne</h1>
         <p>

@@ -6,8 +6,17 @@ const c2Style = {
   color: 'white',
 };
 
-const ComponentTwo = () => {
-  const props = useSpring({
+const btn = {
+  margin: '15px 0',
+  padding: '1rem 2rem',
+  backgroundColor: '#333',
+  border: 'none',
+  color: '#fff',
+  textTransform: 'uppercase',
+};
+
+const ComponentTwo = (props) => {
+  const springAnimation = useSpring({
     opacity: 1,
     from: {
       opacity: 0,
@@ -19,7 +28,7 @@ const ComponentTwo = () => {
   });
 
   return (
-    <animated.div style={props}>
+    <animated.div style={springAnimation}>
       <div style={c2Style}>
         <h1>ComponentTwo</h1>
         <p>
@@ -27,6 +36,9 @@ const ComponentTwo = () => {
           corporis perspiciatis assumenda quae iure iusto fugit, quas tenetur!
           Quasi fugit praesentium ut ea sint id deserunt optio earum soluta!
         </p>
+        <button style={btn} onClick={props.toggle}>
+          Toggle Component Three
+        </button>
       </div>
     </animated.div>
   );
