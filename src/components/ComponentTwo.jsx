@@ -1,33 +1,27 @@
 import { useSpring, animated } from 'react-spring';
 
-const c1Style = {
+const c2Style = {
   padding: '1.5rem',
-  backgroundColor: 'steelblue',
+  backgroundColor: 'slateblue',
   color: 'white',
 };
 
-const counter = {
-  margin: '1rem auto',
-  width: '100px',
-  backgroundColor: '#333',
-  borderRadius: '50%',
-  textAlign: 'center',
-};
-
-const ComponentOne = () => {
+const ComponentTwo = () => {
   const props = useSpring({
-    marginTop: 0,
     opacity: 1,
     from: {
-      marginTop: -500,
       opacity: 0,
+    },
+    delay: 1000,
+    config: {
+      duration: 1000,
     },
   });
 
   return (
     <animated.div style={props}>
-      <div style={c1Style}>
-        <h1>ComponentOne</h1>
+      <div style={c2Style}>
+        <h1>ComponentTwo</h1>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid odio
           corporis perspiciatis assumenda quae iure iusto fugit, quas tenetur!
@@ -38,4 +32,4 @@ const ComponentOne = () => {
   );
 };
 
-export default ComponentOne;
+export default ComponentTwo;
