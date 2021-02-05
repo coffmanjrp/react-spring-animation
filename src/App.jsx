@@ -28,7 +28,6 @@ const App = () => {
             item && (
               <animated.div key={key} style={props}>
                 <ComponentThree />
-                {console.log(props)}
               </animated.div>
             )
         )}
